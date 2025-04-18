@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint MoproSwift.podspec' to ensure this is a
+#  Be sure to run `pod spec lint MoproFFI.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "MoproSwift"
+  spec.name         = "MoproFFI"
   spec.version      = "0.3.0"
   spec.summary      = "A Swift SDK that wraps Mopro bindings for use in iOS apps."
 

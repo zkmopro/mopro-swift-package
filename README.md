@@ -32,6 +32,26 @@ let package = Package(
 )
 ```
 
+### Option 3: Using CocoaPods
+
+1. Add the following to your `Podfile`:
+
+```ruby
+pod 'MoproFFI', :git => 'https://github.com/zkmopro/mopro-swift-package'
+```
+
+2. Run the installation command:
+
+```bash
+pod install
+```
+
+3. Import the package in your Swift code:
+
+```swift
+import MoproFFI
+```
+
 ## How to Use the Package
 
 Here is an example of how to integrate and use this package
