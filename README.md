@@ -2,6 +2,10 @@
 
 This package is used to generate a Swift SDK that wraps Mopro bindings for use in iOS applications.
 
+> [!WARNING]  
+> The current `mopro-swift-package` supports only the Circom `multiplier2` circuit.
+> To use your own circuits, please follow the Getting Started guide and replace the witness function with your own WASM or witness files.
+
 ## How to Import the Package
 
 ### Option 1: Using Xcode
@@ -23,13 +27,32 @@ let package = Package(
     name: "YourSwiftProject",
     // ...
     dependencies: [
-        .package(url: "https://github.com/zkmopro/mopro-swift-package") // Or change to your own URL
+        .package(url: "https://github.com/zkmopro/mopro-swift-package", from: "0.3.0") // Or change to your own URL
     ],
     // ...
     targets: [
-        .target(name: "YourSwiftProject", dependencies: ["MoproFFI"])
+        .target(
+            name: "YourSwiftProject",
+            dependencies: [
+                .product(name: "MoproFFI", package: "mopro-swift-package")
+            ],
+        ),
     ]
 )
+```
+
+### Option 3: Using CocoaPods
+
+1. Add the following to your `Podfile`:
+
+```pod
+pod 'MoproFFI', :git => 'https://github.com/zkmopro/mopro-swift-package.git', :branch => 'main'
+```
+
+2. Run the installation command:
+
+```sh
+pod install
 ```
 
 ## How to Use the Package
